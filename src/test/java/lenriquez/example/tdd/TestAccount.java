@@ -23,4 +23,13 @@ public class TestAccount {
         Account account1 = new Account();
         assertEquals(2000,account1.increaseBalance(2000));
     }
+
+    @Test
+    void accumulateBalance() {
+        Account account1 = new Account();
+        account1.increaseBalance(2500);
+        account1.increaseBalance(100);
+
+        assertEquals(2600, account1.totalBalance());
+    }
 }
