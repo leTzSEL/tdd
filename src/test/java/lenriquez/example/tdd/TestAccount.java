@@ -39,4 +39,11 @@ public class TestAccount {
         account1.increaseBalance(-10);
         assertEquals(0, account1.totalBalance());
     }
+
+    @Test
+    void maximumAllowableIncome3000() {
+        Account account1 = new Account();
+        account1.increaseBalance(3001);
+        assertEquals(0, account1.totalBalance());
+    }
 }

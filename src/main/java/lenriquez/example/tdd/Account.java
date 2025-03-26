@@ -1,7 +1,7 @@
 package lenriquez.example.tdd;
 
 public class Account {
-    int balance = 0;
+    int balance;
 
 
     public int totalBalance() {
@@ -9,13 +9,15 @@ public class Account {
     }
 
     public int increaseBalance(int amount) {
-        return balance += verifyBalanceNoNegative(amount);
+        return balance += amountNoNegativeAndMax300(amount);
     }
 
-    private int verifyBalanceNoNegative(int amount) {
-        if (amount < 0) {
+    private int amountNoNegativeAndMax300(int amount) {
+        if (amount < 0 || amount > 3000) {
             balance = 0;
         }
         return balance;
     }
+
+
 }
