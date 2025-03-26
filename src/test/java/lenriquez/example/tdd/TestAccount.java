@@ -46,4 +46,23 @@ public class TestAccount {
         account1.increaseBalance(3001);
         assertEquals(0, account1.totalBalance());
     }
+
+    @Test
+    void withdrawnMoneyFromAccountWithSaves() {
+        Account account1 = new Account();
+        account1.withdrawnMoneyFromAccount(3001);
+        assertEquals(4000, account1.totalBalance());
+    }
+
+    @Test
+    void tranferMoneyToAnotherAccount() {
+        Account account1 = new Account();
+        Account account2 = new Account();
+
+        account1.moneyTransferToAnotherAccount(account2, 10);
+
+        assertEquals(490, account1.totalBalance());
+        assertEquals(10, account2.totalBalance());
+
+    }
 }

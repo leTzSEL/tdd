@@ -12,6 +12,26 @@ public class Account {
         return balance += amountNoNegativeAndMax300(amount);
     }
 
+    public void withdrawnMoneyFromAccount(int withdrawnAmount) {
+        balance = 4000;
+        if (cantWithdrawnNegative_MoreThanBalanceAndMax300(withdrawnAmount)) {
+            balance -= withdrawnAmount;
+        }
+    }
+
+    public void moneyTransferToAnotherAccount(Account accountRecived, int moneyTransferred) {
+        balance = 500;
+
+        if (cantTransferNegativeAndMax1500(moneyTransferred)) {
+            balance -= moneyTransferred;
+        }
+        accountRecived.moneyTransferRecive(moneyTransferred);
+    }
+
+    public void moneyTransferRecive(int moneyRecived) {
+            balance += moneyRecived;
+    }
+
     private int amountNoNegativeAndMax300(int amount) {
         if (amount < 0 || amount > 3000) {
             balance = 0;
@@ -19,5 +39,11 @@ public class Account {
         return balance;
     }
 
+    private boolean cantWithdrawnNegative_MoreThanBalanceAndMax300(int withdrawnAmount) {
+        return withdrawnAmount > 0 && withdrawnAmount < 3000 && withdrawnAmount < balance;
+    }
 
+    private boolean cantTransferNegativeAndMax1500(int moneyTransferred) {
+        return moneyTransferred > 0 && moneyTransferred < 1500;
+    }
 }
