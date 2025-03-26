@@ -32,4 +32,11 @@ public class TestAccount {
 
         assertEquals(2600, account1.totalBalance());
     }
+
+    @Test
+    void newIncreaseBalanceNegative() {
+        Account account1 = new Account();
+        account1.increaseBalance(-10);
+        assertEquals(0, account1.totalBalance());
+    }
 }

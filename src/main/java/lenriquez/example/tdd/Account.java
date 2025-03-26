@@ -9,6 +9,13 @@ public class Account {
     }
 
     public int increaseBalance(int amount) {
-        return balance += amount;
+        return balance += verifyBalanceNoNegative(amount);
+    }
+
+    private int verifyBalanceNoNegative(int amount) {
+        if (amount < 0) {
+            balance = 0;
+        }
+        return balance;
     }
 }
