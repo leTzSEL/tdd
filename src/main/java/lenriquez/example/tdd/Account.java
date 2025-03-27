@@ -3,7 +3,6 @@ package lenriquez.example.tdd;
 public class Account {
     int balance;
 
-
     public int totalBalance() {
         return balance;
     }
@@ -13,15 +12,12 @@ public class Account {
     }
 
     public void withdrawnMoneyFromAccount(int withdrawnAmount) {
-        balance = 4000;
         if (cantWithdrawnNegative_MoreThanBalanceAndMax300(withdrawnAmount)) {
             balance -= withdrawnAmount;
         }
     }
 
     public void moneyTransferToAnotherAccount(Account accountRecived, int moneyTransferred) {
-        balance = 500;
-
         if (cantTransferNegativeAndMax1500(moneyTransferred)) {
             balance -= moneyTransferred;
         }
@@ -29,7 +25,7 @@ public class Account {
     }
 
     public void moneyTransferRecive(int moneyRecived) {
-            balance += moneyRecived;
+        balance += moneyRecived;
     }
 
     private int amountNoNegativeAndMax300(int amount) {

@@ -50,6 +50,7 @@ public class TestAccount {
     @Test
     void withdrawnMoneyFromAccountWithSaves() {
         Account account1 = new Account();
+        account1.increaseBalance(4000);
         account1.withdrawnMoneyFromAccount(3001);
         assertEquals(4000, account1.totalBalance());
     }
@@ -59,6 +60,7 @@ public class TestAccount {
         Account account1 = new Account();
         Account account2 = new Account();
 
+        account1.increaseBalance(500);
         account1.moneyTransferToAnotherAccount(account2, 10);
 
         assertEquals(490, account1.totalBalance());
