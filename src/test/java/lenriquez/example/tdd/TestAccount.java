@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestAccount {
 
     @Test
-    void newAccountBalance() {
+    void newAccountBalanceCreate() {
         Account account1 = new Account();
         assertEquals(0, account1.totalBalance());
     }
 
     @Test
-    void newIncreaseBalance() {
+    void newIncreaseBalanceToNewAccount() {
         Account account1 = new Account();
         assertEquals(10,account1.increaseBalance(10));
     }
@@ -25,7 +25,7 @@ public class TestAccount {
     }
 
     @Test
-    void accumulateBalance() {
+    void accumulateAnIncreaseBalanceToAccount() {
         Account account1 = new Account();
         account1.increaseBalance(2500);
         account1.increaseBalance(100);
@@ -34,14 +34,14 @@ public class TestAccount {
     }
 
     @Test
-    void newIncreaseBalanceNegative() {
+    void newattemptIncreaseBalanceInNegative() {
         Account account1 = new Account();
         account1.increaseBalance(-10);
         assertEquals(0, account1.totalBalance());
     }
 
     @Test
-    void maximumAllowableIncome3000() {
+    void maximumAllowableIncomeIs3000() {
         Account account1 = new Account();
         account1.increaseBalance(3001);
         assertEquals(0, account1.totalBalance());
