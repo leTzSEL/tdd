@@ -43,15 +43,19 @@ public class TestAccount {
     @Test
     void maximumAllowableIncomeIs3000() {
         Account account1 = new Account();
+
         account1.increaseBalance(3001);
+
         assertEquals(0, account1.totalBalance());
     }
 
     @Test
     void withdrawnMoneyFromAccountWithSaves() {
         Account account1 = new Account();
+
         account1.increaseBalance(4000);
         account1.withdrawnMoneyFromAccount(3001);
+
         assertEquals(4000, account1.totalBalance());
     }
 
@@ -67,4 +71,5 @@ public class TestAccount {
         assertEquals(10, account2.totalBalance());
 
     }
+
 }
