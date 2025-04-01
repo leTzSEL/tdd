@@ -7,25 +7,16 @@ public class Account {
         return balance;
     }
 
+    //Method to increase just the balance on the account
     public int increaseBalance(int amount) {
         return balance += amountNoNegativeAndMax300(amount);
     }
 
+    //Method to decrease/withdraw just the balance on the account
     public void withdrawnMoneyFromAccount(int withdrawnAmount) {
         if (cantWithdrawnNegative_MoreThanBalanceAndMax300(withdrawnAmount)) {
             balance -= withdrawnAmount;
         }
-    }
-
-    public void moneyTransferToAnotherAccount(Account accountRecived, int moneyTransferred) {
-        if (cantTransferNegativeAndMax1500(moneyTransferred)) {
-            balance -= moneyTransferred;
-        }
-        accountRecived.moneyTransferRecive(moneyTransferred);
-    }
-
-    public void moneyTransferRecive(int moneyRecived) {
-        balance += moneyRecived;
     }
 
     private int amountNoNegativeAndMax300(int amount) {
@@ -37,9 +28,5 @@ public class Account {
 
     private boolean cantWithdrawnNegative_MoreThanBalanceAndMax300(int withdrawnAmount) {
         return withdrawnAmount > 0 && withdrawnAmount < 3000 && withdrawnAmount < balance;
-    }
-
-    private boolean cantTransferNegativeAndMax1500(int moneyTransferred) {
-        return moneyTransferred > 0 && moneyTransferred < 1500;
     }
 }
